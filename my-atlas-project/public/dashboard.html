@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-">
+  <title>Dashboard ??????????</title>
+  <style>
+    table { border-collapse: collapse; width: %; }
+    th, td { border: px solid #; padding: px; text-align: center; }
+    th { background-color: #fff; }
+  </style>
+</head>
+<body>
+  <h>Dashboard ??????????</h>
+  <table>
+    <thead>
+      <tr>
+        <th>?????</th>
+        <th>??? ??????</th>
+      </tr>
+    </thead>
+    <tbody id="table"></tbody>
+  </table>
+
+  <script>
+    async function loadUsers() {
+      const res = await fetch('/users');
+      const users = await res.json();
+      const table = document.getElementById('table');
+      table.innerHTML = '';
+      users.forEach(u => {
+        const row = document.createElement('tr');
+        row.innerHTML = \<td>\</td><td>\</td>\;
+        table.appendChild(row);
+      });
+    }
+    loadUsers();
+  </script>
+</body>
+</html>
